@@ -4,7 +4,9 @@
 
 > [!NOTE]
 > At first clone this project. Link
-> ```bash https://github.com/toufikforyou/simple.user.management.console.app.git```
+> ```bash
+> https://github.com/toufikforyou/simple.user.management.console.app.git
+> ```
 
 > [!IMPORTANT]
 > Then Build this project: Write a command line and then press enter:
