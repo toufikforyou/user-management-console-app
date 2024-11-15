@@ -6,10 +6,11 @@
 > At first clone this project. Link `https://github.com/toufikforyou/simple.user.management.console.app.git`
 
 > [!IMPORTANT]
-> Then Build this project: Write a command line and then press enter: `dotnet build`
+> Then Build this project: Write a command line and then press enter:
+> ```bash dotnet build```
 
 > [!TIP]
-> Then Run this project: `dotnet run` write this code command line and press enter.
+> Then Run this project: ```bash dotnet run``` write this code command line and press enter.
 
 > [!NOTE]
 > Choose an option:
