@@ -5,7 +5,7 @@
 > [!NOTE]
 > At first clone this project. Link
 > ```bash
-> https://github.com/toufikforyou/simple.user.management.console.app.git
+> git clone https://github.com/toufikforyou/simple.user.management.console.app.git
 > ```
 
 > [!IMPORTANT]
