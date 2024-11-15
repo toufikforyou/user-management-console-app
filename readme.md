@@ -7,9 +7,9 @@
 
 > [!IMPORTANT]
 > Then Build this project: Write a command line and then press enter:
-```bash
-  dotnet build
-```
+> ```bash
+>   dotnet build
+> ```
 
 > [!TIP]
 > Then Run this project: ```bash dotnet run``` write this code command line and press enter.
