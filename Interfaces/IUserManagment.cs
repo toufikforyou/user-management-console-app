@@ -1,8 +1,3 @@
-
-
-using UserManagementNamespace;
-using UserModelNamespace;
-
 namespace IUserManagmentNamespace
 {
     public interface IUserManager
