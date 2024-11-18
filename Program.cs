@@ -8,25 +8,28 @@ public class Program
     {
         AdminManagement adminManager = new AdminManagement();
 
-        while(true)
+        while (true)
         {
             Console.Clear();
-            Console.WriteLine("\nWelcome to User Managment System");
-            Console.WriteLine("Creation by Group 7:");
-            Console.WriteLine("\nPlease Login first :)");
+            Console.WriteLine("\t   WELCOME TO USER MANAGEMENT SYSTEM");
+            Console.WriteLine("\t\tCreation by Group 7");
+            Console.WriteLine("\t\t   ============");
+            Console.WriteLine("\n\t\tLogin As an Admin\n");
 
-            while(adminManager.Login()){
+            while (adminManager.Login())
+            {
                 Console.Clear();
-                Program.dashboard();
+                Dashboard();
             }
-            
-            Console.WriteLine("Login failed. Press enter to again login");
+
+            Console.Write("\nLogin failed. Press ENTER to again login");
             Console.ReadLine();
         }
-        
+
     }
 
-    static void dashboard(){
+    static void Dashboard()
+    {
         Console.WriteLine("\nWelcome to Dashboard:");
         UserManagement userManager = new UserManagement();
         while (true)
@@ -48,11 +51,11 @@ public class Program
                 case "2":
                     if (userManager.Login())
                     {
-                        Console.WriteLine("Login successful!");
+                        Console.WriteLine("\nLogin successful!");
                     }
                     else
                     {
-                        Console.WriteLine("Login failed.");
+                        Console.WriteLine("\nLogin failed.");
                     }
                     break;
                 case "3":
@@ -63,10 +66,12 @@ public class Program
                     break;
                 case "5":
                     Console.Clear();
-                    Console.WriteLine("Admin Logout Successfull. \n\n Press enter to again login.");
+                    Console.WriteLine("Admin Logout Successfull.");
+                    Console.Write("\n\nPress ENTER to again login: ");
                     Console.ReadLine();
                     return;
                 default:
+                    Console.Clear();
                     Console.WriteLine("Invalid choice. Please try again.");
                     break;
             }

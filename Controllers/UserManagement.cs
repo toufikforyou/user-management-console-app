@@ -11,33 +11,33 @@ namespace UserManagementNamespace
         public void Register()
         {
             Console.Clear();
-            Console.WriteLine("Enter your name:");
+            Console.Write("Enter your name: ");
             var name = Console.ReadLine();
 
-            Console.WriteLine("Enter a email:");
+            Console.Write("Enter a email: ");
             var email = Console.ReadLine();
 
-            Console.WriteLine("Enter a password:");
+            Console.Write("Enter a password: ");
             var password = Console.ReadLine();
 
             if (users.Exists(u => u.Email == email))
             {
-                Console.WriteLine("Email already exists.");
+                Console.WriteLine("\nEmail already exists.");
                 return;
             }
 
             users.Add(new User { Name = name ?? "", Email = email ?? "", Password = password ?? "" });
 
-            Console.WriteLine("Registration successful!");
+            Console.WriteLine("\nRegistration successful!");
         }
 
         public bool Login()
         {
             Console.Clear();
-            Console.WriteLine("Enter your email:");
+            Console.Write("Enter your email: ");
             var email = Console.ReadLine();
 
-            Console.WriteLine("Enter your password:");
+            Console.Write("Enter your password: ");
             var password = Console.ReadLine();
 
             var userLogin = users.Find(u => u.Email == email && u.Password == password);
@@ -48,7 +48,7 @@ namespace UserManagementNamespace
         public void Delete()
         {
             Console.Clear();
-            Console.WriteLine("Enter your email:");
+            Console.Write("Enter your email:");
             var email = Console.ReadLine();
 
             var userToRemove = users.FirstOrDefault(u => u.Email == email);
@@ -56,21 +56,23 @@ namespace UserManagementNamespace
             if (userToRemove != null)
             {
                 users.Remove(userToRemove);
-                Console.WriteLine("User deleted successfully.");
+                Console.WriteLine("\nUser deleted successfully.");
             }
             else
             {
-                Console.WriteLine("User not found.");
+                Console.WriteLine("\nUser not found.");
             }
         }
 
         public void ListUsers()
         {
             Console.Clear();
-            Console.WriteLine("All registered users:");
+            Console.WriteLine("All registered users:\n");
+            int count = 0;
             foreach (var user in users)
             {
-                Console.WriteLine($"Name: {user.Name}, Email: {user.Email}");
+                count++;
+                Console.WriteLine($"{count}. Name: {user.Name}, Email: {user.Email}");
             }
         }
     }
