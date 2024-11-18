@@ -4,6 +4,7 @@ namespace IUserManagmentNamespace
     {
         void Register();
         bool Login();
+        void UpdateUser();
         void Delete();
     }
 }

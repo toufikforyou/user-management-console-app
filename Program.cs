@@ -30,16 +30,17 @@ public class Program
 
     static void Dashboard()
     {
-        Console.WriteLine("\nWelcome to Dashboard:");
+        Console.WriteLine("\nWelcome to Admin Dashboard:");
         UserManagement userManager = new UserManagement();
         while (true)
         {
             Console.WriteLine("\nChoose an option:");
-            Console.WriteLine("1. Register");
-            Console.WriteLine("2. User Login");
-            Console.WriteLine("3. List Users");
-            Console.WriteLine("4. Delete by user");
-            Console.WriteLine("5. Logout");
+            Console.WriteLine("1. Register User");
+            Console.WriteLine("2. Login User");
+            Console.WriteLine("3. Update User");
+            Console.WriteLine("4. Delete User");
+            Console.WriteLine("5. List of Users");
+            Console.WriteLine("6. Logout as admin");
 
             var choice = Console.ReadLine();
 
@@ -59,12 +60,15 @@ public class Program
                     }
                     break;
                 case "3":
-                    userManager.ListUsers();
+                    userManager.UpdateUser();
                     break;
                 case "4":
                     userManager.Delete();
                     break;
                 case "5":
+                    userManager.ListUsers();
+                    break;
+                case "6":
                     Console.Clear();
                     Console.WriteLine("Admin Logout Successfull.");
                     Console.Write("\n\nPress ENTER to again login: ");
