@@ -22,8 +22,12 @@ public class Program
                 Dashboard();
             }
 
-            Console.Write("\nLogin failed. Press ENTER to again login");
-            Console.ReadLine();
+            Console.Write("\nLogin failed. Press ENTER to again login ");
+            string exit = Console.ReadLine();
+            if (exit == "exit")
+            {
+                return;
+            }
         }
 
     }
