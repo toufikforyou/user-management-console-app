@@ -116,17 +116,24 @@ namespace UserManagementNamespace
             Console.Clear();
             if (users.Count() > 0)
             {
-                Console.WriteLine("All registered users:\n");
+                Console.WriteLine("---------------------------------------------------------");
+                Console.WriteLine("|\t\tALL REGISTERED USERS LIST:\t\t|");
+                Console.WriteLine("|-------------------------------------------------------|");
+                Console.WriteLine("| SN\t|NAME \t\t\t|Email\t\t\t|");
+                Console.WriteLine("|-------|-----------------------|-----------------------|");
                 int count = 0;
                 foreach (var user in users)
                 {
                     count++;
-                    Console.WriteLine($"{count}. Name: {user.Name}, Email: {user.Email}");
+                    Console.WriteLine($"| {count}\t|{user.Name}\t\t|{user.Email}\t|");
+                    Console.WriteLine("|-------|-----------------------|-----------------------|");
                 }
             }
             else
             {
-                Console.WriteLine("Users not found!");
+                Console.WriteLine("|-------------------------------------------------------|");
+                Console.WriteLine("\t\t\tUsers not found!");
+                Console.WriteLine("|-------------------------------------------------------|");
             }
 
         }

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>C__USER_MANAGEMENT_SYSTEM</RootNamespace>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>SIMPLE_USER_MANAGMENT_SYSTEM_CONSOLE_APPLICATION</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
