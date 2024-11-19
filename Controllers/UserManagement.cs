@@ -53,8 +53,6 @@ namespace UserManagementNamespace
 
             var userToUpdate = users.FirstOrDefault(u => u.Email == searchByEmail);
 
-
-
             if (userToUpdate != null)
             {
                 Console.WriteLine($"\nUsers Current Information:\nNAME: {userToUpdate.Name} EMAIL: {userToUpdate.Email} PASSWORD: ****\n\n");
