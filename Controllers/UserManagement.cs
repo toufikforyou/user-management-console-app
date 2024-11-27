@@ -7,6 +7,7 @@ namespace UserManagementNamespace
     public class UserManagement : IUserManager
     {
         private static List<UserModel> users = new List<UserModel>();
+        public static string myemail = "";
 
         public void Register()
         {
@@ -33,7 +34,6 @@ namespace UserManagementNamespace
 
         public bool Login()
         {
-            Console.Clear();
             Console.Write("Enter a email: ");
             var email = Console.ReadLine();
 
@@ -41,9 +41,55 @@ namespace UserManagementNamespace
             var password = Console.ReadLine();
 
             var userLogin = users.Find(u => u.Email == email && u.Password == password);
-            return userLogin != null;
 
+            if (userLogin == null) return false;
+
+            myemail = email ?? "";
+            return true;
         }
+
+        public void UpdateMyUser()
+        {
+            Console.Clear();
+            var userToUpdate = users.FirstOrDefault(u => u.Email == myemail);
+
+            if (userToUpdate != null)
+            {
+                Console.WriteLine($"\nUsers Current Information:\nNAME: {userToUpdate.Name} EMAIL: {userToUpdate.Email} PASSWORD: ****\n\n");
+
+                Console.Write("Enter update name: ");
+                var name = Console.ReadLine();
+
+                Console.Write("Enter update email: ");
+                var email = Console.ReadLine();
+
+                Console.Write("Enter or current password: ");
+                var password = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(name))
+                {
+                    name = userToUpdate.Name;
+                }
+
+                if (string.IsNullOrEmpty(email))
+                {
+                    email = userToUpdate.Email;
+                }
+
+                if (string.IsNullOrEmpty(password))
+                {
+                    password = userToUpdate.Password;
+                }
+
+                userToUpdate.Name = name;
+                userToUpdate.Email = email;
+                myemail = email;
+                userToUpdate.Password = password;
+
+                Console.WriteLine("\nUser successfully updated");
+            }
+        }
+
 
         public void UpdateUser()
         {
@@ -84,6 +130,8 @@ namespace UserManagementNamespace
                 userToUpdate.Name = name;
                 userToUpdate.Email = email;
                 userToUpdate.Password = password;
+
+                Console.WriteLine("\nUser successfully updated");
             }
             else
             {
@@ -111,12 +159,27 @@ namespace UserManagementNamespace
             }
         }
 
+        public void ShowMyInfo()
+        {
+            Console.Clear();
+            var myInfo = users.FirstOrDefault(u => u.Email == myemail);
+
+            Console.WriteLine("|-------------------------------------------------------|");
+            Console.WriteLine("|\t\tSHOW MY INFORMATION:\t\t\t|");
+            Console.WriteLine("|-------------------------------------------------------|");
+            Console.WriteLine("| SN\t|NAME \t\t\t|Email\t\t\t|");
+            Console.WriteLine("|-------|-----------------------|-----------------------|");
+
+            Console.WriteLine($"| {1}\t|{myInfo?.Name}\t\t|{myInfo?.Email}\t|");
+            Console.WriteLine("|-------|-----------------------|-----------------------|");
+
+        }
         public void ListUsers()
         {
             Console.Clear();
             if (users.Count() > 0)
             {
-                Console.WriteLine("---------------------------------------------------------");
+                Console.WriteLine("|-------------------------------------------------------|");
                 Console.WriteLine("|\t\tALL REGISTERED USERS LIST:\t\t|");
                 Console.WriteLine("|-------------------------------------------------------|");
                 Console.WriteLine("| SN\t|NAME \t\t\t|Email\t\t\t|");

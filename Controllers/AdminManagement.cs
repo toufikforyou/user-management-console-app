@@ -12,8 +12,7 @@ namespace AdminManagementNamespace
             Console.Write("Enter your password: ");
             var password = Console.ReadLine();
 
-            return username == "toufikforyou" && password == "#password";
-
+            return (username == "toufikforyou" && password == "#password") || (username == "G7" && password == "#G7");
         }
     }
 }
