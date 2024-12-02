@@ -1,3 +1,5 @@
+using InputErrorNamespace;
+using UserErrorNamespace;
 using UserManagementNamespace;
 
 namespace UserDashboardNamespace
@@ -29,10 +31,48 @@ namespace UserDashboardNamespace
                 switch (choice)
                 {
                     case "1":
-                        userManager.ShowMyInfo();
+                        try
+                        {
+                            userManager.ShowMyInfo();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+
                         break;
                     case "2":
-                        userManager.UpdateMyUser();
+                        try
+                        {
+                            userManager.UpdateMyUser();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.Clear();
+                            Console.Write($"\n{err.Message}");
+                        }
+                        Console.WriteLine("\n");
                         break;
                     case "3":
                         return;

@@ -1,4 +1,6 @@
 using AdminManagementNamespace;
+using InputErrorNamespace;
+using UserErrorNamespace;
 using UserManagementNamespace;
 
 namespace AdminDashboardNamespace
@@ -31,16 +33,79 @@ namespace AdminDashboardNamespace
                 switch (choice)
                 {
                     case "1":
-                        userManager.Register();
+                        try
+                        {
+                            userManager.Register();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
                         break;
                     case "2":
-                        userManager.UpdateUser();
+                        try
+                        {
+                            userManager.UpdateUser();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+
                         break;
                     case "3":
-                        userManager.Delete();
+                        try
+                        {
+                            userManager.Delete();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+
                         break;
                     case "4":
-                        userManager.ListUsers();
+                        try
+                        {
+                            userManager.ListUsers();
+                        }
+                        catch (InputError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (UserError err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+                        catch (Exception err)
+                        {
+                            Console.WriteLine($"\n{err.Message}");
+                        }
+
                         break;
                     case "5":
                         Console.Clear();

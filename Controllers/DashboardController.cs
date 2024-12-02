@@ -1,4 +1,6 @@
 using AdminDashboardNamespace;
+using AdminErrorNamespace;
+using InputErrorNamespace;
 using UserDashboardNamespace;
 
 namespace DashboardControllerNamespace
@@ -11,14 +13,32 @@ namespace DashboardControllerNamespace
         {
             Console.Clear();
             Console.WriteLine("\n\t\tLogin As an Admin\n");
-            while (adminDashboard.AdminLogin())
+
+            try
+            {
+                while (adminDashboard.AdminLogin())
+                {
+                    Console.Clear();
+                    adminDashboard.Dashboard();
+                }
+            }
+            catch (InputError err)
             {
                 Console.Clear();
-                adminDashboard.Dashboard();
+                Console.Write($"\n{err.Message}");
+            }
+            catch (AdminError err)
+            {
+                Console.Clear();
+                Console.Write($"\n{err.Message}");
+            }
+            catch (Exception err)
+            {
+                Console.Clear();
+                Console.Write($"\n{err.Message}");
             }
 
-            Console.Clear();
-            Console.Write("\nLogin failed Press ENTER to try again ");
+            Console.Write("\n\nPress ENTER to try again ");
             var tryAgain = Console.ReadLine();
             switch (tryAgain)
             {
@@ -28,21 +48,27 @@ namespace DashboardControllerNamespace
                     AdminLoginPage();
                     break;
             }
-
         }
 
         public void UserLoginPage()
         {
             Console.Clear();
             Console.WriteLine("\n\t\tLogin As an User\n");
-            while (userDashboard.UserLogin())
+            try
+            {
+                while (userDashboard.UserLogin())
+                {
+                    Console.Clear();
+                    userDashboard.Dashboard();
+                }
+            }
+            catch (Exception err)
             {
                 Console.Clear();
-                userDashboard.Dashboard();
+                Console.Write($"\n{err.Message}");
             }
 
-            Console.Clear();
-            Console.Write("\nLogin failed Press ENTER to try again ");
+            Console.Write("\n\nPress ENTER to try again ");
             var tryAgain = Console.ReadLine();
             switch (tryAgain)
             {
