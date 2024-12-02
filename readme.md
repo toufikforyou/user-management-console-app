@@ -9,6 +9,8 @@
 > git clone https://github.com/toufikforyou/simple.user.management.console.app.git
 > ```
 
+> Add new feture `Custom Error Handling`
+
 > [!IMPORTANT]
 > Then Build this project: Write a command line and then press enter:
 
