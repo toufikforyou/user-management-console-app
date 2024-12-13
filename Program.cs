@@ -1,5 +1,4 @@
-﻿using AdminDashboardNamespace;
-using DashboardControllerNamespace;
+﻿using DashboardControllerNamespace;
 
 public class Program
 {
