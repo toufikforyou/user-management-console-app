@@ -89,7 +89,7 @@ namespace UserManagementNamespace
                 }
                 else
                 {
-                    if (email.Contains("@")) throw new InputError("Email must be valid");
+                    if (!email.Contains("@")) throw new InputError("Email must be valid");
                 }
 
                 var password = InputHandling.StringInput("Enter or current password: ");
