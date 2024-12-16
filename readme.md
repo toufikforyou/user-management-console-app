@@ -6,7 +6,7 @@
 > At first clone this project. Link
 >
 > ```bash
-> git clone https://github.com/toufikforyou/simple.user.management.console.app.git
+> git clone https://github.com/toufikforyou/user-management-console-app.git
 > ```
 
 > Add new feture `Custom Error Handling`
