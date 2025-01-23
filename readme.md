@@ -58,7 +58,7 @@ MH TOUFIK HASAN
 Enter a email:
 
 ```BASH
-hello@toufikhasan.com
+toufikforyou@gmail.com
 ```
 
 Enter a password:
@@ -88,7 +88,7 @@ Type 2:
 Enter a email:
 
 ```BASH
-hello@toufikhasan.com
+toufikforyou@gmail.com
 ```
 
 Enter a password:
@@ -118,7 +118,7 @@ Type 3:
 All registered users:
 
 ```bash
-    1. Name: MH TOUFIK, Email: hello@toufikhasan.com
+    1. Name: MH TOUFIK, Email: toufikforyou@gmail.com
 ```
 
 > [!NOTE]
@@ -142,7 +142,7 @@ Type 4:
 Enter a email:
 
 ```BASH
-hello@toufikhasan.com
+toufikforyou@gmail.com
 ```
 
 > [!IMPORTANT]
